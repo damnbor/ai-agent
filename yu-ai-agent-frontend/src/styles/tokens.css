@@ -1,0 +1,132 @@
+/**
+ * 设计令牌 — 全站颜色、字体、间距、圆角（供各页面与组件引用）
+ */
+:root {
+  /* 背景层级 - 浅紫色主题 */
+  --color-bg-base: #FAF5FF;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-gradient-start: #F5F3FF;
+  --color-bg-gradient-mid: #F0E7FF;
+  --color-bg-gradient-end: #FAF5FF;
+
+  --color-surface-chat: rgba(255, 255, 255, 0.95);
+  --color-surface-card: rgba(255, 255, 255, 0.98);
+  --color-surface-input: rgba(255, 255, 255, 0.99);
+
+  /* 文字 - 浅紫色主题 */
+  --color-text-primary: #312E81;
+  --color-text-secondary: #4C1D95;
+  --color-text-muted: #6D28D9;
+  --color-text-on-accent: #FFFFFF;
+
+  /* 边框与分割 - 浅紫色主题 */
+  --color-border-subtle: #EDE9FE;
+  --color-border-default: #DDD6FE;
+  --color-border-strong: #C4B5FD;
+
+  /* 品牌 / 强调 */
+  --color-accent: #8B5CF6;
+  --color-accent-hover: #7C3AED;
+  --color-user-bubble-start: #C4B5FD;
+  --color-user-bubble-end: #A78BFA;
+  --color-send-start: #8B5CF6;
+  --color-send-end: #7C3AED;
+
+  /* AI 头像强调 */
+  --color-avatar-love-from: #D946EF;
+  --color-avatar-love-to: #BE185D;
+  --color-avatar-manus-from: #8B5CF6;
+  --color-avatar-manus-to: #7C3AED;
+  --color-avatar-user-from: #A78BFA;
+  --color-avatar-user-to: #8B5CF6;
+
+  /* 焦点环 */
+  --color-focus-ring: #8B5CF6;
+
+  /* 字体 */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei',
+    sans-serif;
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.625rem;
+  --line-height-tight: 1.35;
+  --line-height-body: 1.55;
+
+  /* 间距 (4px 基准) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* 圆角 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+
+  /* 布局 */
+  --layout-max-chat: 880px;
+  --layout-max-home: 720px;
+  --layout-header-h: 52px;
+
+  /* 触摸目标最小尺寸 */
+  --touch-target-min: 44px;
+
+  /* 断点 */
+  --bp-tablet-max: 1199px;
+  --bp-mobile-max: 767px;
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 背景层级 */
+    --color-bg-base: #1e1b4b;
+    --color-bg-elevated: #312e81;
+    --color-bg-gradient-start: #1e1b4b;
+    --color-bg-gradient-mid: #312e81;
+    --color-bg-gradient-end: #1e1b4b;
+
+    --color-surface-chat: rgba(49, 46, 129, 0.95);
+    --color-surface-card: rgba(49, 46, 129, 0.92);
+    --color-surface-input: rgba(49, 46, 129, 0.98);
+
+    /* 文字 */
+    --color-text-primary: #e9d5ff;
+    --color-text-secondary: #d8b4fe;
+    --color-text-muted: #a78bfa;
+    --color-text-on-accent: #ffffff;
+
+    /* 边框与分割 */
+    --color-border-subtle: rgba(167, 139, 250, 0.15);
+    --color-border-default: rgba(167, 139, 250, 0.25);
+    --color-border-strong: rgba(167, 139, 250, 0.5);
+
+    /* 品牌 / 强调 */
+    --color-accent: #a78bfa;
+    --color-accent-hover: #c4b5fd;
+    --color-user-bubble-start: #4c1d95;
+    --color-user-bubble-end: #312e81;
+    --color-send-start: #7c3aed;
+    --color-send-end: #5b21b6;
+
+    /* AI 头像强调 */
+    --color-avatar-love-from: #a855f7;
+    --color-avatar-love-to: #9333ea;
+    --color-avatar-manus-from: #8b5cf6;
+    --color-avatar-manus-to: #7c3aed;
+    --color-avatar-user-from: #6b7280;
+    --color-avatar-user-to: #4b5563;
+
+    /* 焦点环 */
+    --color-focus-ring: #a78bfa;
+  }
+}

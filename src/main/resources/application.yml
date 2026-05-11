@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: yu-ai-agent
+  profiles:
+    active: local
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: deepseek-r1:1.5b
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        dimensions: 1536
+        distance-type: COSINE_DISTANCE
+        max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+#    mcp:
+#      client:
+#        #sse连接方式
+#        sse:
+#            connections:
+#              server1:
+#                url: http://localhost:8127
+#        #stdio连接方式
+#        stdio:
+#          servers-configuration: classpath:mcp-servers.json
+
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+# springdoc-openapi
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.yupi.yuaiagent.controller
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+#logging:
+#  level:
+#    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+#修改日志级别，查看Spring AI更多调用细节
+logging:
+  level:
+    org.springframework.ai: DEBUG
+
