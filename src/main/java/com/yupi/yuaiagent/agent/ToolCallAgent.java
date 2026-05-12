@@ -46,7 +46,7 @@ public class ToolCallAgent extends ReActAgent{
         this.toolCallingManager = ToolCallingManager.builder().build();
         //禁用Spring AI内置的工具调用机制，自己维护选项和上下文
         this.chatOptions = DashScopeChatOptions.builder()
-                .withProxyToolCalls(true)
+                .withInternalToolExecutionEnabled(false)
                 .build();
     }
 
@@ -67,7 +67,7 @@ public class ToolCallAgent extends ReActAgent{
             //获取带工具选项的响应
             ChatResponse chatResponse = getChatClient().prompt(prompt)
                     .system(getSystemPrompt())
-                    .tools(availableTools)
+                    .toolCallbacks(availableTools)
                     .call()
                     .chatResponse();
             //记录响应，用于Act
